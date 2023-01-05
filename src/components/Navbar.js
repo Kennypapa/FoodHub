@@ -3,13 +3,13 @@ const Navbar = () => {
         <>
             <div className="h-[60px]  w-full shadow-md bg-[#f6f6f6] flex justify-between items-center px-20">
                 <div className="flex justify-center items-center">
-                    <div className="rounded-full w-[40px] h-[40px] relative mr-7 cursor-pointer">
+                    <div className="rounded-full w-[40px] h-[40px] relative mr-7 cursor-pointer" id="nav-toggler">
                          <div className="w-[30px] bg-[#030303] h-[1px]  absolute top-2 left-1"></div>
                          <div className="w-[30px] bg-[#030303] h-[1px]  absolute top-4 left-1"></div>
                          <div className="w-[30px] bg-[#030303] h-[1px]  absolute top-6 left-1"></div>
                     </div>
                     <div>
-                        <p className="nav-font text-3xl">
+                        <p className="nav-font text-3xl">s
                             FoodHub
                         </p>
                     </div> 
@@ -17,7 +17,7 @@ const Navbar = () => {
                 
                 <div className="w-[40%]">
                     <form class="flex items-center">   
-                        <label for="simple-search" class="sr-only">Search</label>
+                        <label htmlFor="simple-search" class="sr-only">Search</label>
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
