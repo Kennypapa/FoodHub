@@ -12,7 +12,7 @@ const Navbar = () => {
                         <p className="nav-font text-3xl">
                             FoodHub
                         </p>
-                    </div>
+                    </div> 
                 </div>   
                 
                 <div className="w-[40%]">
