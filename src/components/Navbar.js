@@ -1,15 +1,15 @@
 const Navbar = () => {
     return(
         <>
-            <div className="h-[60px]  w-full shadow-md bg-[#f6f6f6] flex justify-between items-center px-20">
+            <div className="h-[60px]  w-full shadow-md bg-[#030303] flex justify-between items-center px-20">
                 <div className="flex justify-center items-center">
                     <div className="rounded-full w-[40px] h-[40px] relative mr-7 cursor-pointer" id="nav-toggler">
-                         <div className="w-[30px] bg-[#030303] h-[1px]  absolute top-2 left-1"></div>
-                         <div className="w-[30px] bg-[#030303] h-[1px]  absolute top-4 left-1"></div>
-                         <div className="w-[30px] bg-[#030303] h-[1px]  absolute top-6 left-1"></div>
+                         <div className="w-[30px] bg-white h-[1px]  absolute top-2 left-1"></div>
+                         <div className="w-[30px] bg-white h-[1px]  absolute top-4 left-1"></div>
+                         <div className="w-[30px] bg-white h-[1px]  absolute top-6 left-1"></div>
                     </div>
                     <div>
-                        <p className="nav-font text-3xl">s
+                        <p className="nav-font text-3xl text-white">
                             FoodHub
                         </p>
                     </div> 
