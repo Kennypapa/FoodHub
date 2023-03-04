@@ -14,7 +14,6 @@ const Navbar = () => {
                         </p>
                     </div> 
                 </div>   
-                
                 <div className="w-[40%]">
                     <form class="flex items-center">   
                         <label htmlFor="simple-search" class="sr-only">Search</label>

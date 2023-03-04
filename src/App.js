@@ -1,13 +1,8 @@
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Sidebar from './components/Sidebar';
+import Pages from './pages/pages';
 function App() {
-
   return (
     <div>
-        <Navbar/>
-        <Sidebar />
-        <Home />
+        <Pages />
     </div>
   );
 }
