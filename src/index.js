@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './assets/css/hub.css';
 import './assets/js/hub';
+import './assets/js/typewrite';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

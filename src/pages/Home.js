@@ -1,34 +1,61 @@
-import FirstBg from '../assets/img/FC_two_phones.webp';
+import FirstBg from "../assets/img/FC_two_phones.webp";
 import Popular from "../components/popular";
 import Veggie from "../components/veggie";
+import Category from "../components/Category";
 
 const Home = () => {
-    return (
-        <>
-            <div className=" layout">
-                 <div className="h-[100vh] bg-white w-full first-bg flex ">
-                    <div className="w-1/2 h-[100vh] pl-32 pt-20">
-                        <div>
-                            <div className=' mb-40'>
-                                <p className='text-white text-5xl uppercase font-[Satisfy]'>Foodhub</p>
-                            </div>
-                            <p className='font-[Poppins] text-xl text-white font-[600] mb-3'>Delicious meals and drinks delivered to your doorstep!</p>
-                            <p className='font-[Poppins] text-base text-white font-[400] mb-1'> Created By:</p>
-                            <div className='w-[30px] h-[30px] flex justify-center items-center font-[600] bg-[#e60a2b] text-white'>
-                                K
-                            </div>
-                       </div>
+  return (
+    <>
+      <div className="layout">
+        <div className="h-[100vh] bg-white w-full first-bg flex">
+          <div className="w-1/2 h-[100vh] pl-24 pt-20">
+
+            <div>
+
+              <div className=" mb-40">
+                <p className="text-white text-5xl uppercase font-[Satisfy]">
+                  Foodhub
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <h1>
+                    <p className="typewrite text-white text-6xl font-[Poppins] font-extrabold" data-period="2000" data-type='[ "Vegetables", "Chocolate Wafer", "Snacks" ]'>
+                        <span className="wrap"></span>
+                    </p>
+              </h1>
+              <p className="text-white text-6xl font-[Poppins] font-extrabold">on-demand.</p>
+
+              </div>
+
+              <p className="font-[Poppins] text-xl text-white font-[600] mb-3">
+                 Find out your Delicious meals and drinks
+              </p>
+
+              <div className="flex">
+                    <span>
+                        <p className="font-[Poppins] text-base text-white font-[400] mb-1">
+                            {" "}
+                            Created By:
+                        </p>
+                    </span>
+                    <div className="w-[30px] h-[30px] flex justify-center items-center font-[600] bg-[#e60a2b] text-white">
+                        K
                     </div>
-                    <div className="w-1/2 h-[100vh] flex justify-end items-center">
-                        <div className='w-[600px]'>
-                         <img src={FirstBg} alt="" />
-                       </div>
-                    </div>
-                 </div>
-                <Veggie />
-                <Popular />
-            </div>  
-        </>
-    )
-}
+              </div>
+            </div>
+          </div>
+          <div className="w-1/2 h-[100vh] flex justify-end items-center">
+            <div className="w-[600px]">
+              <img src={FirstBg} alt="" />
+            </div>
+          </div>
+        </div>
+        <Category />
+        <Veggie />
+        <Popular />
+      </div>
+    </>
+  );
+};
 export default Home;
