@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Home from  './Home';
+
 const pages = () => {
   return (
     <div>

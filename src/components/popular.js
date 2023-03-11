@@ -22,23 +22,25 @@ const Popular = () => {
       items: 1,
     },
   };
+  // const getPopular = async () => { 
+  //   const check = localStorage.getItem("popular");
+  //   if (check) {
+  //     setPopular(JSON.parse(check));
+  //   } else {
+
+  //   }
+  // };
+  const getPopular = async () => { 
+    const api = await fetch(
+      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+    );
+    const data = await api.json();
+    setPopular(data.recipes);
+    console.log(data.recipes);
+  }
   useEffect(() => {
     getPopular();
   }, []);
-  const getPopular = async () => { 
-    const check = localStorage.getItem("popular");
-    if (!check) {
-      setPopular(JSON.parse(check));
-    } else {
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
-      );
-      const data = await api.json();
-      localStorage.setItem("popular", JSON.stringify(data.recipes));
-      setPopular(data.recipes);
-      console.log(data.recipes);
-    }
-  };
   return (
     <div className="pt-8">
       <section>
@@ -56,20 +58,20 @@ const Popular = () => {
             responsive={responsive}
           >
             {popular.map((recipe) => (
-              <div
-                className="bg-[#f6f6f6] rounded-lg h-[240px] w-[290px] mx-auto drop-shadow-md "
+                <div
+                className="bg-[#f6f6f6] rounded-lg  h-[330px] w-[280px] border mx-auto drop-shadow-md "
                 key={recipe.id}
               >
-                <div className="w-full h-full rounded-lg relative flex justify-center items-end ">
+                <div className="w-full h-[230px] relative flex justify-center items-end ">
                   <img
                     src={recipe.image}
                     alt={recipe.title}
-                    className="rounded-lg absolute inset-0 object-cover h-full w-full object-cover"
+                    className=" absolute inset-0 object-cover h-full w-full"
                   />
-                  <div className="h-[275px] layout w-full   relative z-40 flex justify-center items-center">
-                    <p className="text-white">{recipe.title}</p>
-                  </div>
                 </div>
+                <div className=" layout w-full z-40 flex justify-center items-center pl-2 pt-2">
+                    <p className="text-sm">{recipe.title}</p>
+                  </div>
               </div>
             ))}
           </Carousel>
