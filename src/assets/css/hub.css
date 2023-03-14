@@ -19,6 +19,23 @@ body {
 .first-bg{
     background: linear-gradient(90deg,#7ad0ef,#be3bd1);
 }
+.food_box{
+    box-shadow: 8px 10px 10px #2a2a4266!important;
+}
+
+@media only screen and (max-width:1270px){
+   .food_wrap{
+    width: 1000px!important;
+   }
+   .food_box{
+     width: 220px!important;
+   }
+}
+@media only screen and (max-width:1023px){
+    .food_wrap{
+        width: 100%!important;
+    }
+}
 /* .layout{
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
 } */

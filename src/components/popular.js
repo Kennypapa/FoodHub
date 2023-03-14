@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
 const Popular = () => {
   const [popular, setPopular] = useState([]);
   const responsive = {
@@ -14,7 +15,7 @@ const Popular = () => {
       items: 4,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 600 },
       items: 3,
     },
     mobile: {
@@ -22,22 +23,20 @@ const Popular = () => {
       items: 1,
     },
   };
-  // const getPopular = async () => { 
-  //   const check = localStorage.getItem("popular");
-  //   if (check) {
-  //     setPopular(JSON.parse(check));
-  //   } else {
-
-  //   }
-  // };
-  const getPopular = async () => { 
-    const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
-    );
-    const data = await api.json();
-    setPopular(data.recipes);
-    console.log(data.recipes);
-  }
+  const getPopular = async () => {
+    const check = localStorage.getItem("popular");
+    if (check) {
+      setPopular(JSON.parse(check));
+    } else {
+      const api = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+      );
+      const data = await api.json();
+      localStorage.setItem("popular", JSON.stringify(data.recipes));
+      setPopular(data.recipes);
+      console.log(data.recipes);
+    }
+  };
   useEffect(() => {
     getPopular();
   }, []);
@@ -50,7 +49,7 @@ const Popular = () => {
             For You
           </span>
         </div>
-        <div className="w-[94%] mx-auto">
+        <div className="w-[94%] mx-auto food_wrap">
           <Carousel
             autoPlay={true}
             infinite={true}
@@ -58,20 +57,22 @@ const Popular = () => {
             responsive={responsive}
           >
             {popular.map((recipe) => (
-                <div
-                className="bg-[#f6f6f6] rounded-lg  h-[330px] w-[280px] border mx-auto drop-shadow-md "
+              <div
+                className="bg-[#f6f6f6] rounded-lg  h-[330px] w-[280px] border mx-auto food_box !mb-5"
                 key={recipe.id}
               >
-                <div className="w-full h-[230px] relative flex justify-center items-end ">
-                  <img
-                    src={recipe.image}
-                    alt={recipe.title}
-                    className=" absolute inset-0 object-cover h-full w-full"
-                  />
-                </div>
-                <div className=" layout w-full z-40 flex justify-center items-center pl-2 pt-2">
+                <Link to={"/recipe/" + recipe.id}>
+                  <div className="w-full h-[230px] relative flex justify-center items-end ">
+                    <img
+                      src={recipe.image}
+                      alt={recipe.title}
+                      className=" absolute inset-0 object-cover h-full w-full"
+                    />
+                  </div>
+                  <div className=" layout w-full z-40 flex justify-center items-center pl-2 pt-2">
                     <p className="text-sm">{recipe.title}</p>
                   </div>
+                </Link>
               </div>
             ))}
           </Carousel>

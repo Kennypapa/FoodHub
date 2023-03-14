@@ -7,7 +7,7 @@ const Home = () => {
       <div className="mb-20">
         <div>
           <div className="h-[100vh] bg-white w-full  flex">
-            <div className="w-1/2 h-[100vh] pl-24 pt-20">
+            <div className="w-1/2 h-[100vh] pl-24 pt-36">
               <div>
                 <div className="mb-8">
                   <h1>

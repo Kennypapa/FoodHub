@@ -6,8 +6,10 @@ import './assets/css/hub.css';
 import './assets/js/hub';
 import './assets/js/typewrite';
 import App from './App.js';
-import Cuisine from './pages/Cuisine';
+import Cuisine from './pages/cuisine';
 import Home from './pages/Home';
+import Searched from './components/Sidebar';
+import Recipe from './pages/recipe' 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +20,8 @@ root.render(
        <Route path="" element={<App/>} >
           <Route path="/home" element={<Home/>} ></Route>
           <Route path="/cuisine/:type" element={<Cuisine/>} ></Route>
+          <Route path="/searched/:search" element={<Searched/>} ></Route>
+          <Route path="/recipe/:name" element={<Recipe/>} ></Route>
        </Route>
      </Routes>
     </BrowserRouter>
