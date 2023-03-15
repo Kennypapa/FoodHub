@@ -6,20 +6,20 @@ const Home = () => {
     <>
       <div className="mb-20">
         <div>
-          <div className="h-[100vh] bg-white w-full  flex">
-            <div className="w-1/2 h-[100vh] pl-24 pt-36">
+          <div className="bg-white w-full  lg:flex block justify-between items-center">
+            <div className="lg:w-1/2 w-full lg:h-[100vh] h-auto lg:pl-24 pl-8 lg:pt-40 pt-20">
               <div>
                 <div className="mb-8">
                   <h1>
                     <p
-                      className="typewrite text-black text-6xl font-[Poppins] font-extrabold"
+                      className="typewrite text-black lg:text-6xl text-5xl  font-[Poppins] font-extrabold"
                       data-period="2000"
                       data-type='[ "Vegetables", "Chocolate Wafer", "Snacks" ]'
                     >
                       <span className="wrap"></span>
                     </p>
                   </h1>
-                  <p className="text-black text-6xl font-[Poppins] font-extrabold">
+                  <p className="text-black lg:text-6xl text-5xl font-[Poppins] font-extrabold">
                     on-demand.
                   </p>
                 </div>
@@ -41,8 +41,8 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="w-1/2 h-[100vh] flex justify-end items-center">
-              <div className="w-[600px]">
+            <div className="w-1/2 lg:h-[100vh] h-auto lg:flex hidden justify-end items-center">
+              <div className="w-[600px] relative -top-20">
                 <img src={FirstBg} alt="" />
               </div>
             </div>

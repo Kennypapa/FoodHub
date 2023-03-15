@@ -16,7 +16,7 @@ const Veggie = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 600 },
-      items: 3,
+      items: 2,
     },
    
     mobile: {
