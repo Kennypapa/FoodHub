@@ -6,7 +6,7 @@ import './assets/css/hub.css';
 import './assets/js/hub';
 import './assets/js/typewrite';
 import App from './App.js';
-import Cuisine from './pages/cuisine';
+import Cuisine from './pages/Cuisine';
 import Home from './pages/Home';
 import Searched from './components/Sidebar';
 import Recipe from './pages/recipe' 
